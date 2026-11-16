@@ -1,29 +1,27 @@
 # Homebrew formula template; the release workflow fills in the @...@ fields
 # and pushes the result to rasmus105/homebrew-tap.
 class Ptz < Formula
-  desc "Render PDFs in the terminal"
+  desc "View documents and images in the terminal"
   homepage "https://github.com/rasmus105/ptz"
-  license "MIT"
+  license "AGPL-3.0-or-later"
 
   on_macos do
     on_arm do
-      url "https://github.com/rasmus105/ptz/releases/download/v0.2.0/ptz-0.2.0-aarch64-macos.tar.gz"
-      sha256 "8d26a135facc046b79eacb9875f96223886c506dbe06726e8d1f3456adc9e7b8"
+      url "https://github.com/rasmus105/ptz/releases/download/v0.3.0/ptz-0.3.0-aarch64-macos.tar.gz"
+      sha256 "b3f9c92a438fab810d35e40479014e594cb39e8d5f50a54be6b768cace48cf69"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/rasmus105/ptz/releases/download/v0.2.0/ptz-0.2.0-x86_64-linux.tar.gz"
-      sha256 "bdf5c05f4b93891666e80e204952039cfbc3fad51d575a6042a765642fcadbb8"
+      url "https://github.com/rasmus105/ptz/releases/download/v0.3.0/ptz-0.3.0-x86_64-linux.tar.gz"
+      sha256 "c5cebbfb456232af90dafb20bb450142f8ebcf8c7f1eb80613e690406764a99a"
     end
   end
 
   def install
-    # ptz finds PDFium in ../lib relative to itself; libexec keeps PDFium out
-    # of the shared Homebrew lib/ directory.
-    libexec.install "bin", "lib"
-    bin.install_symlink libexec/"bin/ptz"
+    bin.install "bin/ptz"
+    pkgshare.install Dir["share/ptz/*"]
   end
 
   test do
