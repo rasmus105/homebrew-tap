@@ -7,15 +7,15 @@ class Ptz < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/rasmus105/ptz/releases/download/v0.4.0/ptz-0.4.0-aarch64-macos.tar.gz"
-      sha256 "42edbbd6686bedcaad55225fd296825bd3bc63a9f5b20a62744db935e416a0d9"
+      url "https://github.com/rasmus105/ptz/releases/download/v0.5.0/ptz-0.5.0-aarch64-macos.tar.gz"
+      sha256 "662e55daa1b49de7b47a18187cd32876f90d420713738c2889f06c10e4391c4c"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/rasmus105/ptz/releases/download/v0.4.0/ptz-0.4.0-x86_64-linux.tar.gz"
-      sha256 "e9073d740fc2479ffd18028b8a97c08dfe0be049d7d44c3cb5ffd22976e67ca7"
+      url "https://github.com/rasmus105/ptz/releases/download/v0.5.0/ptz-0.5.0-x86_64-linux.tar.gz"
+      sha256 "de3f9045814a30e7b9b7f7113c3dada3947e223bd03e2879c4983627226903b3"
     end
   end
 
